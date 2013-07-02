@@ -289,6 +289,8 @@ Slider.prototype.init = function(options) {
 
 	// Get the container element
 	this.container = document.getElementById(this.options.containerId);
+	this.container.style.height = this.options.height;
+	this.container.style.marginBottom = (this.options.height/10)+this.options.shadowMargin;
 
 	// Preload images
 	var preloadCss = "";
@@ -298,7 +300,7 @@ Slider.prototype.init = function(options) {
 		var div = document.createElement("div");
 
 		div.setAttribute("id", "preload-" + i);
-		preloadCss += "div#preload-" + i + " { background: url('images/" + 
+		preloadCss += "div#preload-" + i + " { background: url('" + this.options.path + 
 			myCollection[i] + "') no-repeat -9999px -9999px; }\n";
 	
 		this.container.appendChild(div);
