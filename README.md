@@ -35,7 +35,7 @@ var myOptions = {
 	height 		: 370, 
 	transition 	: 5000,
 	interval	: 5000,
-	path		: ""
+	path		: "path/to/collection/images/"
 };
 ```
 
