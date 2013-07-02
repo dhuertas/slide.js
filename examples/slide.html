@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>Slider</title>
+	<script type="text/javascript" src="../src/slider.js"></script>
+	<script type="text/javascript" src="../src/transitions/vertical.js"></script>
+	<script type="text/javascript" src="../src/transitions/horizontal.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../src/css/slider.css">
+	<style type="text/css">
+	body {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		font-family: sans-serif;
+	}
+
+	#container {
+		margin: 70px auto;
+		width: 960px;
+		text-align: center;
+		font-size: 12px;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="slide-container"></div>
+		<p>Disclaimer: All images are copyright to their respective owners.</p>
+	</div>
+	
+	<script type="text/javascript">
+
+	var mySlider = new Slider();
+
+	var myCollection = [
+		"http://api.ning.com/files/cM8qQUJ2Gr-ems9GJaqlfxWPzvJRr5BTWv1GdN3NhWAmF82b8cg3oEp7AJ1-ZNjO8ysrZTpNv1CVc2H3o5OOTHqjGEV6Uf0h/bigstockphoto_zen_stones960x370.jpg",
+		"http://sacfirstnaz.org/newtestlayout/wp-content/uploads/2011/06/thumb_960x370_01.png",
+		"http://www.bodegasinfin.com/site/img/slideshow/all/sinfinnautilus-960x370.jpg",
+		"http://www.zeapp.com/wp-content/uploads/2010/12/960x370_Goldcoins.jpg",
+		"http://sacfirstnaz.org/newtestlayout/wp-content/uploads/2011/06/Shout-960x370.jpg",
+		"http://www.glasgowoncology.com/wp-content/uploads/2011/06/960x370-switcher-loch01.jpg"];
+
+	var myOptions = {
+		containerId : "slide-container", 
+		width 		: 960, 
+		height 		: 370, 
+		transition 	: 5000,
+		interval	: 5000,
+		path		: ""
+	};
+
+	mySlider.init(myOptions)
+		.setCollection(myCollection);
+
+	mySlider.run();
+
+	</script>
+</body>
+</html>
