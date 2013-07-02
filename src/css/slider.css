@@ -1,0 +1,40 @@
+/*
+ * Css file for the image slider
+ *
+ * @author dhuertas
+ * @email huertas.dani@gmail.com
+ */
+#stage {
+	position: absolute;
+	z-index: 100;
+}
+
+#backstage {
+	position: absolute;
+	z-index: 10;
+}
+
+#progress-bar {
+	position: absolute;
+	z-index: 1000;
+	height: 5px;
+}
+
+#progress-bar #progress-bar-fill {
+	height: 2px;
+	background-color: red;
+}
+
+#shadow {
+	position: absolute;
+	z-index: 1;
+	background-color: #333;
+	/* fallback */
+	background-color: #333;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+
+	background: -webkit-radial-gradient(center center, ellipse cover, rgba(0,0,0,.8) 5%, rgba(255,255,255, 0) 80%); /* Safari 5.1+, Chrome 10+ */
+	background: -moz-radial-gradient(center center, ellipse cover, rgba(0,0,0,.8) 5%, rgba(255,255,255, 0) 80%); /* Firefox 3.6+ */
+	background: -ms-radial-gradient(center center, ellipse cover, rgba(0,0,0,.8) 5%, rgba(255,255,255, 0) 80%); /* IE 10 */
+}
