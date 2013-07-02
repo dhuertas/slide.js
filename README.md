@@ -34,7 +34,7 @@ var myOptions = {
 	width 		: 960, 
 	height 		: 370, 
 	transition 	: 5000,
-	interval	: 5000,
+	duration	: 5000,
 	path		: "path/to/collection/images/"
 };
 ```
