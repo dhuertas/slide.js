@@ -5,7 +5,7 @@ Simple, cross-browser image slider using CSS3 transitions and Javascript.
 
 ![alt tag](https://dl.dropboxusercontent.com/u/1690746/images/slider-example.png)
 
-**Example**
+#### Example
 
 Download and include the javascript file in your html document.
 
