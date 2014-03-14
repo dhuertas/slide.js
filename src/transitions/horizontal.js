@@ -99,6 +99,9 @@ var HorizontalTransition = function() {
 
 				side.style.position = "absolute";
 				side.style.backgroundColor = "rgba(240, 240, 240, .5)";
+				side.style.width = width + "px";
+				side.style.display = "block";
+
 				var transform = "";
 
 				switch(sideClasses[j]) {
@@ -140,10 +143,6 @@ var HorizontalTransition = function() {
 						break;
 
 				}
-
-				side.style.width = width + "px";
-				side.style.display = "block";
-				side.style.position = "absolute";
 
 				styleMe(side, "BackfaceVisibility", "hidden");
 				styleMe(side, "Transform", transform);

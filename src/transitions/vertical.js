@@ -25,14 +25,6 @@ var VerticalTransition = function() {
 
 	var prismOrder		= [];
 
-	var prefix = ["Webkit", "Moz", "O", "Ms", "Khtml"],
-		prefixCSSTranslate = {
-			Webkit : "-webkit-",
-			Moz : "-moz-",
-			O : "-o-",
-			Ms : "-ms-",
-			Khtml : "-khtml-"};
-
 	/*
 	 * Animate each prism by modifying the transform values
 	 */

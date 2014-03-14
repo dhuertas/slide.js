@@ -5,7 +5,7 @@
  * @email huertas.dani@gmail.com
  */
 
-var vendorPrefix = ["Webkit", "Moz", "O", "Ms", "Khtml"];
+var vendorPrefix = ["Webkit", "Moz", "O", "Ms", "Khtml", ""];
 
 var prefixCSSTranslate = { 
 	'Webkit':'-webkit-', 
@@ -70,14 +70,20 @@ function styleMe(elem, key, value) {
 
 	}
 
-	if ( ! prefixExist) elem.style[key] = value;
-
+	if ( ! prefixExist) {
+		var opKey = key.charAt(0).toLowerCase() + key.slice(1);
+		if (typeof elem.style[opKey] != "undefined") {
+			elem.style[opKey] = value;
+		} else {
+			elem.style[key] = value;
+		}
+	}
 }
 
 var Slider = function() {
 
 	// Version of the slider
-	this.version = "0.0.1";
+	this.version = "0.0.2";
 
 	// Default settings, used to set the options Object upon initialization
 	this.defaults = {
@@ -428,20 +434,26 @@ Slider.prototype.initProgressBar = function() {
 
 	this.container.appendChild(this.progressBar);
 
-	this.progressBarStyle = document.createElement("style");
+	if (document.createStyleSheet) {
+		// IE way to create style sheets
+		this.progressBarStyle = document.createStyleSheet();
+	} else {
+		this.progressBarStyle = document.createElement("style");
+	}
+
 	this.progressBarStyle.setAttribute("id", "progress-bar-style");
 
 	this.progressBarStyle.textContent =
 			"@-webkit-keyframes progress-bar {" +
-				" 0% { width: 0px; } 99% { width: " + this.options.width + "; } 100% { width: 0px; }}\n"+
+				" 0% { width: 0px; } 99% { width: " + this.options.width + "px; } 100% { width: 0px; }}\n"+
 			"@-moz-keyframes progress-bar {" +
-				" 0% { width: 0px; } 99% { width: " + this.options.width + "; } 100% { width: 0px; }}\n"+
+				" 0% { width: 0px; } 99% { width: " + this.options.width + "px; } 100% { width: 0px; }}\n"+
 			"@-ms-keyframes progress-bar {" +
-				" 0% { width: 0px; } 99% { width: " + this.options.width + "; } 100% { width: 0px; }}\n"+
+				" 0% { width: 0px; } 99% { width: " + this.options.width + "px; } 100% { width: 0px; }}\n"+
 			"@-o-keyframes progress-bar {" +
-				" 0% { width: 0px; } 99% { width: " + this.options.width + "; } 100% { width: 0px; }}\n"+
+				" 0% { width: 0px; } 99% { width: " + this.options.width + "px; } 100% { width: 0px; }}\n"+
 			"@keyframes progress-bar {" +
-				" 0% { width: 0px; } 99% { width: " + this.options.width + "; } 100% { width: 0px; }}\n";
+				" 0% { width: 0px; } 99% { width: " + this.options.width + "px; } 100% { width: 0px; }}\n";
 
 	this.progressBarStyle.textContent += "" +
 		"#progress-bar-fill.fill { " +
@@ -460,6 +472,9 @@ Slider.prototype.initProgressBar = function() {
 		"-o-animation: none; " +
 		"animation: none; " +
 		"}";
+
+	this.progressBarStyle.setAttribute("type", "text/css");
+	this.progressBarStyle.setAttribute("rel", "stylesheet");
 
 	head.appendChild(this.progressBarStyle);
 
