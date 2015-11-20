@@ -3,9 +3,9 @@ slide.js
 
 Simple, cross-browser image slider using CSS3 transitions and Javascript.
 
-![alt tag](https://dl.dropboxusercontent.com/u/1690746/images/slider-example.png)
+![slider preview](http://danihuertas.com/img/slider-example.png)
 
-#### Example
+#### How to
 
 Download and include the javascript file in your html document.
 
