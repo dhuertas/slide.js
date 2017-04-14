@@ -3,7 +3,7 @@ slide.js
 
 Simple, cross-browser image slider using CSS3 transitions and Javascript.
 
-![slider preview](http://danihuertas.com/img/slider-example.png)
+![slider preview](https://raw.githubusercontent.com/dhuertas/slide.js/master/examples/img/slider.png)
 
 #### How to
 
